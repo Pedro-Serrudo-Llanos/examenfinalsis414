@@ -15,7 +15,7 @@ import { RuedasComponent } from '../ruedas/ruedas.component';
 export class HomeComponent {
 
   private http = inject(HttpClient);
-  private baseUrl = 'http://backend414-production.up.railway.app/bicicletas';
+  private baseUrl = 'https://backend414-production.up.railway.app/bicicletas';
   items: any[] = [];
 
   bicicleta = {
@@ -33,17 +33,17 @@ export class HomeComponent {
   }
 
   getBicicletas() {
-    this.http.get('http://backend414-production.up.railway.app/bicicletas')
+    this.http.get('https://backend414-production.up.railway.app/bicicletas')
       .subscribe(data => this.items = data as any[]);
   }
 
   getBicicletaById(id: number) {
-    this.http.get(`http://backend414-production.up.railway.app/bicicletas/${id}`)
+    this.http.get(`https://backend414-production.up.railway.app/bicicletas/${id}`)
       .subscribe(data => console.log(data));
   }
 
   postBicicleta() {
-    this.http.post(`http://backend414-production.up.railway.app/bicicletas`, this.bicicleta, { observe: 'response' })
+    this.http.post(`https://backend414-production.up.railway.app/bicicletas`, this.bicicleta, { observe: 'response' })
       .subscribe({
         next: () => {
           this.getBicicletas();
@@ -57,7 +57,7 @@ export class HomeComponent {
   }
 
   putBicicleta() {
-    this.http.put(`http://backend414-production.up.railway.app/bicicletas/${this.bicicleta.id}`, this.bicicleta, { observe: 'response' })
+    this.http.put(`https://backend414-production.up.railway.app/bicicletas/${this.bicicleta.id}`, this.bicicleta, { observe: 'response' })
       .subscribe({
         next: () => {
           this.getBicicletas();
@@ -71,7 +71,7 @@ export class HomeComponent {
   }
 
   deleteBicicleta(id: number) {
-    this.http.delete(`http://backend414-production.up.railway.app/bicicletas/${id}`, { observe: 'response' })
+    this.http.delete(`https://backend414-production.up.railway.app/bicicletas/${id}`, { observe: 'response' })
       .subscribe({
         next: resp => {
           if (resp.status === 200 || resp.status === 204)

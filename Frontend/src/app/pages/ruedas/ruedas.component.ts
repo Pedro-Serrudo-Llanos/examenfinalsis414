@@ -13,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RuedasComponent {
 
-  private baseUrl = 'http://backend414-production.up.railway.app/ruedas';
+  private baseUrl = 'https://backend414-production.up.railway.app/ruedas';
 
   items: any[] = [];
 
@@ -32,14 +32,14 @@ export class RuedasComponent {
   }
 
   getRuedas() {
-    this.http.get<any[]>('http://backend414-production.up.railway.app/ruedas').subscribe({
+    this.http.get<any[]>('https://backend414-production.up.railway.app/ruedas').subscribe({
       next: (data) => (this.items = data),
       error: (err) => console.error('Error al cargar ruedas', err)
     });
   }
 
   postRueda() {
-    this.http.post('http://backend414-production.up.railway.app/ruedas', this.rueda).subscribe({
+    this.http.post('https://backend414-production.up.railway.app/ruedas', this.rueda).subscribe({
       next: () => {
         this.reset();
         this.getRuedas();
@@ -56,7 +56,7 @@ export class RuedasComponent {
   putRueda() {
     const id = this.rueda.ruedaId;
 
-    this.http.put(`http://backend414-production.up.railway.app/ruedas/${id}`, this.rueda).subscribe({
+    this.http.put(`https://backend414-production.up.railway.app/ruedas/${id}`, this.rueda).subscribe({
       next: () => {
         this.reset();
         this.getRuedas();
@@ -68,7 +68,7 @@ export class RuedasComponent {
   deleteRueda(id: number) {
     if (!confirm('¿Eliminar rueda?')) return;
 
-    this.http.delete(`http://backend414-production.up.railway.app/ruedas/${id}`).subscribe({
+    this.http.delete(`https://backend414-production.up.railway.app/ruedas/${id}`).subscribe({
       next: () => this.getRuedas(),
       error: (err) => alert('Error al eliminar')
     });

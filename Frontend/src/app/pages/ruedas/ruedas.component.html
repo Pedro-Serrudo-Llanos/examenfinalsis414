@@ -1,0 +1,72 @@
+<div class="page-container">
+
+  <div class="section-title">
+    <h1>Gestión de Ruedas</h1>
+    <p>Administra ruedas con material, color, precio, ancho y bicicleta asociada.</p>
+  </div>
+
+  <!-- FORMULARIO -->
+  <div class="card form-card">
+    <h2>{{ isEditing ? 'Editar Rueda' : 'Nueva Rueda' }}</h2>
+
+    <form (ngSubmit)="isEditing ? putRueda() : postRueda()" #form="ngForm">
+
+      <div class="form-group">
+        <label>Material</label>
+        <input type="text" required [(ngModel)]="rueda.material" name="material">
+      </div>
+
+      <div class="form-group">
+        <label>Color</label>
+        <input type="text" required [(ngModel)]="rueda.color" name="color">
+      </div>
+
+      <div class="form-group">
+        <label>Precio</label>
+        <input type="number" step="0.01" required [(ngModel)]="rueda.price" name="price">
+      </div>
+
+      <div class="form-group">
+        <label>Ancho (width)</label>
+        <input type="number" step="0.1" required [(ngModel)]="rueda.width" name="width">
+      </div>
+
+      <div class="form-group">
+        <label>ID Bicicleta</label>
+        <input type="number" required [(ngModel)]="rueda.bicicleta.id" name="bicicletaId">
+      </div>
+
+      <div class="btn-area">
+        <button class="btn primary" *ngIf="!isEditing">Agregar Rueda</button>
+        <button class="btn edit" *ngIf="isEditing">Actualizar Rueda</button>
+        <button class="btn cancel" type="button" *ngIf="isEditing" (click)="reset()">Cancelar</button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- LISTA -->
+  <div class="section-title-small">
+    <h2>Lista de Ruedas</h2>
+  </div>
+
+  <div class="bikes-grid">
+
+    <div class="card bike-card" *ngFor="let item of items">
+      <h3>Rueda #{{ item.ruedaId }}</h3>
+
+      <p><strong>Material:</strong> {{ item.material }}</p>
+      <p><strong>Color:</strong> {{ item.color }}</p>
+      <p><strong>Precio:</strong> {{ item.price }}</p>
+      <p><strong>Ancho:</strong> {{ item.width }}</p>
+      <p><strong>Bicicleta ID:</strong> {{ item.bicicleta?.id }}</p>
+
+      <div class="card-buttons">
+        <button class="btn small edit" (click)="startEdit(item)">Editar</button>
+        <button class="btn small delete" (click)="deleteRueda(item.ruedaId)">Eliminar</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,298 @@
+#bicicletas {
+    background: white;
+    padding: 100px 5%;
+    min-height: 100vh;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-item.active,
+.nav-item:hover {
+    background: var(--gradient-1);
+    color: white;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.section-title p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-title-small {
+    margin: 4rem 0 2rem 0;
+}
+
+.section-title-small h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    text-align: center;
+}
+
+.card {
+    background: rgb(212, 211, 211);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+}
+
+.form-card {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-card h2 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+}
+
+.btn-area {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn.primary {
+    background: var(--gradient-1);
+    color: white;
+}
+
+
+.btn.cancel {
+    background: #6c757d;
+    color: white;
+}
+
+.btn.delete {
+    background: #dc3545;
+    color: white;
+}
+
+.btn.small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.bikes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.bike-card {
+    padding: 2rem;
+    transition: transform 0.3s ease;
+    border-left: 4px solid var(--primary);
+}
+
+.bike-card:hover {
+    transform: translateY(-5px);
+}
+
+.bike-card h3 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.bike-card p {
+    margin-bottom: 0.8rem;
+    color: #555;
+}
+
+.bike-card strong {
+    color: var(--dark);
+}
+
+.card-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.card-buttons .btn {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .navbar .logo {
+        font-size: 1.5rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .section-title h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title p {
+        font-size: 1.1rem;
+    }
+    
+    .card {
+        padding: 2rem;
+    }
+    
+    .bikes-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .btn-area {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .card-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .section-title h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title-small h2 {
+        font-size: 1.5rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+}

@@ -1,0 +1,117 @@
+<header>
+    <div class="container header-container">
+        <h1 class="logo">BICIS</h1>
+        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link active">Inicio</a></li>
+                <li><a href="#about" class="nav-link">Nosotros</a></li>
+                <li><a href="#benefits" class="nav-link">Beneficios</a></li>
+                <li><a href="#bicicletas" class="nav-link">Bicicletas</a></li>
+                <li><a href="#ruedas" class="nav-link">Ruedas</a></li>
+                <li><a href="#contact" class="nav-link">Contactos</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="hero" class="hero-section">
+    <div class="hero-content">
+        <h2 class="hero-title">Encuentra tu Bicicleta Perfecta</h2>
+        <p class="hero-subtitle">
+            Bicicletas de montaña, ruta, urbanas y eléctricas. Calidad, seguridad y velocidad en un solo lugar.
+        </p>
+        <a href="#bicicletas" class="btn btn-primary">Explorar Bicicletas</a>
+    </div>
+</section>
+
+<section id="about" class="about-section">
+    <div class="container about-container">
+        <div class="about-text">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <p class="about-description">
+                Somos BICIS, una tienda especializada en bicicletas de alta calidad. Ofrecemos modelos para principiantes, profesionales y amantes de la aventura. Nuestro equipo también brinda servicio técnico y asesoramiento personalizado.
+            </p>
+        </div>
+
+        <div class="about-stats">
+            <div class="stat-item">
+                <h3>+10</h3>
+                <p>Años en el mercado</p>
+            </div>
+            <div class="stat-item">
+                <h3>1500+</h3>
+                <p>Clientes felices</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Modelos disponibles</p>
+            </div>
+            <div class="stat-item">
+                <h3>4.9★</h3>
+                <p>Calificación promedio</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="benefits" class="benefits-section">
+    <div class="container">
+        <h2 class="section-title">¿Por qué elegirnos?</h2>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>Asesoramiento experto</h3>
+                <p>Te ayudamos a encontrar la bici ideal según tu experiencia y estilo de vida.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3>Repuestos y accesorios</h3>
+                <p>Todo lo que necesitas para mantener tu bici siempre lista.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3>Servicio técnico</h3>
+                <p>Mantenimiento profesional para garantizar tu seguridad.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3>Garantía en todos los modelos</h3>
+                <p>Compra con confianza y respaldo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="practices-section">
+    <section id="bicicletas">
+        <app-bicicletas></app-bicicletas>
+    </section>
+</section>
+
+<section class="resources-section">
+    <section id="ruedas">
+        <app-ruedas></app-ruedas>
+    </section>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="container contact-container">
+        <h2 class="section-title">Contactos</h2>
+
+        <div class="contact-form">
+            <form>
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Mensaje" required></textarea>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-container">
+        <p>© 2025 BICIS - Tu tienda de bicicletas</p>
+    </div>
+</footer>

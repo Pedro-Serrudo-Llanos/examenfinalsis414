@@ -1,0 +1,89 @@
+
+
+<!-- CONTENEDOR PRINCIPAL -->
+<div class="page-container">
+
+  <!-- TITULO -->
+  <div class="section-title">
+    <h1>Gestión de Bicicletas</h1>
+    <p>Administra el registro, actualización y eliminación de bicicletas.</p>
+  </div>
+
+  <!-- FORMULARIO -->
+  <div class="card form-card">
+    <h2>{{ isEditing ? 'Editar Bicicleta' : 'Nueva Bicicleta' }}</h2>
+
+    <form 
+      (ngSubmit)="isEditing ? putBicicleta() : postBicicleta()" 
+      #form="ngForm"
+    >
+
+      <div class="form-group">
+        <label for="marca">Marca</label>
+        <input id="marca" type="text" name="marca" required [(ngModel)]="bicicleta.marca" />
+      </div>
+
+      <div class="form-group">
+        <label for="tipo">Tipo</label>
+        <input id="tipo" type="text" name="tipo" required [(ngModel)]="bicicleta.tipo" />
+      </div>
+
+      <div class="form-group">
+        <label for="precio">Precio</label>
+        <input id="precio" type="number" name="precio" required [(ngModel)]="bicicleta.precio" />
+      </div>
+
+      <div class="form-group checkbox">
+        <label>
+          <input type="checkbox" name="disponible" [(ngModel)]="bicicleta.disponible" />
+          Disponible
+        </label>
+      </div>
+
+      <div class="btn-area">
+        <button type="submit" class="btn primary" *ngIf="!isEditing">
+          Agregar Bicicleta
+        </button>
+
+        <button type="submit" class="btn edit" *ngIf="isEditing">
+          Actualizar Bicicleta
+        </button>
+
+        <button type="button" class="btn cancel" *ngIf="isEditing" (click)="reset()">
+          Cancelar
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- LISTADO -->
+  <div class="section-title-small">
+    <h2>Lista de Bicicletas</h2>
+  </div>
+
+  <div class="bikes-grid">
+    @for (item of items; track item.id) {
+      <div class="card bike-card">
+
+        <h3>ID: {{ item.id }}</h3>
+
+        <p><strong>Marca:</strong> {{ item.marca }}</p>
+        <p><strong>Tipo:</strong> {{ item.tipo }}</p>
+        <p><strong>Precio:</strong> $ {{ item.precio }}</p>
+        <p><strong>Disponible:</strong> 
+          <span [style.color]="item.disponible ? 'green' : 'red'">
+            {{ item.disponible ? 'Sí' : 'No' }}
+          </span>
+        </p>
+
+        <div class="card-buttons">
+          <button class="btn small edit" (click)="startEdit(item)">Editar</button>
+          <button class="btn small delete" (click)="deleteBicicleta(item.id)">Eliminar</button>
+        </div>
+
+      </div>
+    }
+  </div>
+
+</div>

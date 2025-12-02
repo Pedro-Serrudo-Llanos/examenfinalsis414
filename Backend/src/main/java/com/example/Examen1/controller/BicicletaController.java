@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/bicicletas")
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://peppy-kheer-4ac26c.netlify.app")
 public class BicicletaController {
 
     @Autowired
